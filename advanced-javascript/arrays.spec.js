@@ -45,7 +45,7 @@ describe ('Arrays', () => {
       expect(typeof filter).toBe('function');
     })
     it ('should filter an array', () => {
-      const filtered = filter([1,2,3,4,5,6], (a) => {if (a !==2) return a});
+      const filtered = filter([1,2,3,4,5,6], (a) => {if (a !== 2) return a});
       expect(filtered).toEqual([1,3,4,5,6]);
     })
   })
@@ -53,6 +53,10 @@ describe ('Arrays', () => {
     const flatten = arrayFunctions.flatten;
     it ('should be a function', () => {
       expect(typeof flatten).toBe('function');
+    })
+    it ('should flatten a multi-dimentional array', () => {
+      const flattened = flatten([1, [2], [[3]], [[[4]]]]);
+      expect(flattened).toEqual([1, 2, 3, 4]);
     })
   })
 });
